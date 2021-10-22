@@ -4,5 +4,5 @@ import { IInfoList, IValuableItemInfo } from './IBase';
 export interface ISkillInfoList extends IInfoList<ISkillInfo> {}
 
 export interface ISkillInfo extends IValuableItemInfo {
-  group: string; // 技能所属的阵营
+  groupId: string; // 技能所属的阵营
 }
