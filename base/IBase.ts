@@ -1,5 +1,5 @@
 // info 列表类型的基类
-export interface IInfoList<T> {
+export interface IInfoList<T extends IInfo> {
   [_id: string]: T;
 }
 
@@ -11,6 +11,6 @@ export interface IInfo {
   description: string;
 }
 
-export interface IValuableItemInfo extends IInfo {
+export interface IValuableItem {
   value: number; // 物品的价值，可供英雄装备，消耗战术点
 }

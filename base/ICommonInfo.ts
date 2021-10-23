@@ -5,5 +5,6 @@ export interface ICommonInfo {
     health: number; // 生命槽值
     energy: number; // 能量槽值
     valueLimit: number; // 战术点限制
+    skillAccount: number; // 可装备的技能数
   };
 }

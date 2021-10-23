@@ -1,8 +1,6 @@
-import { IInfoList, IValuableItemInfo } from './IBase';
+import { IInfo, IValuableItem } from './IBase';
 
-// 所有技能的一个列表，记录技能的常规信息
-export interface ISkillInfoList extends IInfoList<ISkillInfo> {}
-
-export interface ISkillInfo extends IValuableItemInfo {
+// 记录技能的常规信息
+export interface ISkillInfo extends IInfo, IValuableItem {
   groupId: string; // 技能所属的阵营
 }
