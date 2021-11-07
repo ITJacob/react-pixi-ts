@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import pixiMain from './canvas/main';
+import pixiMain from './view/main';
 
 export default class Canvas extends Component<{}, any> {
   componentDidMount() {

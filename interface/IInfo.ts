@@ -10,9 +10,9 @@ export interface IInfoList<T extends IInfo> {
 // info 类型的基类
 export interface IInfo {
   _id: string;
-  name: string;
+  name?: string;
   icon?: string;
-  description: string;
+  description?: string;
 }
 
 // 有价值的物品，可供英雄装备，消耗战术点
