@@ -1,5 +1,4 @@
 class MessageCenter {
-  private pip: [];
   private target = new EventTarget();
 
   emit(type: string, detail: any) {
@@ -7,8 +6,12 @@ class MessageCenter {
     this.target.dispatchEvent(e);
   }
 
-  subscribe(type: string) {
-    this.target.addEventListener;
+  subscribe(type: string, cb: (d: any) => void) {
+    this.target.addEventListener(type, cb);
+  }
+
+  unsubscribe(type: string, cb: (d: any) => void) {
+    this.target.removeEventListener(type, cb);
   }
 }
 
