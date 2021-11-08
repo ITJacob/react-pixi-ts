@@ -15,5 +15,4 @@ class MessageCenter {
   }
 }
 
-const mc = new MessageCenter();
-export default mc;
+export default new MessageCenter();
