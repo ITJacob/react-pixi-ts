@@ -1,5 +1,5 @@
+import { UiManager } from '../view/UiManager';
 import { GameManager } from './GameManager';
-import { UiManager } from './UiManager';
 
 export class Battlefield {
   gm: GameManager;
