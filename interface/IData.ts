@@ -20,6 +20,7 @@ export interface IHeroData {
 
 // 用户设置的队伍
 export interface ITeamData {
+  _id: string;
   primary: boolean;
   order: number;
   name: string;
