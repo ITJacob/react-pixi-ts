@@ -11,5 +11,8 @@ export class UiManager {
 
   init() {
     this.btn = new Button(this.app.stage);
+    this.btn.x = 100;
+    this.btn.y = 80;
+    this.btn.text = '火球';
   }
 }

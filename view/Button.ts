@@ -5,14 +5,25 @@ export class Button extends PIXI.Sprite {
   static init(render: PIXI.Renderer) {
     const graphics = new PIXI.Graphics();
     graphics.beginFill(0xff3300);
-    graphics.drawRect(0, 0, 100, 100);
+    graphics.drawRect(0, 0, 60, 35);
     graphics.endFill();
 
     Button.texture = render.generateTexture(
       graphics,
-      PIXI.SCALE_MODES.NEAREST,
+      PIXI.SCALE_MODES.LINEAR,
       1
     );
+  }
+
+  private basicText = new PIXI.Text('', { fill: '#ffffff', fontSize: 18 });
+
+  set text(t: string) {
+    this.basicText.text = t;
+    this.basicText.anchor.set(0.5);
+  }
+
+  get text() {
+    return this.basicText.text;
   }
 
   constructor(stage: PIXI.Container) {
@@ -22,13 +33,11 @@ export class Button extends PIXI.Sprite {
 
   private _init(stage: PIXI.Container) {
     this.anchor.set(0.5);
-    this.width = 100;
-    this.height = 100;
-    this.x = 100;
-    this.y = 100;
-    // console.log('haha');
+    this.width = 60;
+    this.height = 35;
 
     stage.addChild(this);
+    this.addChild(this.basicText);
 
     // Opt-in to interactivity
     this.interactive = true;
