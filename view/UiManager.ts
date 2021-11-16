@@ -3,21 +3,27 @@ import { Button } from './Button';
 
 export class UiManager {
   app: PIXI.Application;
-  btn: Button;
+  skills: Button[] = [];
+  heros: Button[] = [];
   constructor(app: PIXI.Application) {
     this.app = app;
     Button.init(this.app.renderer);
   }
 
   init() {
-    this.btn = new Button(this.app.stage);
-    this.btn.x = 100;
-    this.btn.y = 680;
-    this.btn.text = '火球';
-
-    const btn2 = new Button(this.app.stage);
-    btn2.x = 180;
-    btn2.y = 680;
-    btn2.text = '火爆';
+    ['火弹', '火球', '焰爆', '陨石'].forEach((text, i) => {
+      const btn = new Button(this.app.stage);
+      btn.x = 300;
+      btn.y = 560 + i * 60;
+      btn.text = text;
+      this.skills[i] = btn;
+    });
+    ['炎魔', '卫队长', '医官'].forEach((text, i) => {
+      const btn = new Button(this.app.stage);
+      btn.x = 40;
+      btn.y = 600 + i * 80;
+      btn.text = text;
+      this.heros[i] = btn;
+    });
   }
 }
