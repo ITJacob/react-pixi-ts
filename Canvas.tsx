@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import pixiMain from './view/main';
+import * as PIXI from 'pixi.js';
+import { UiManager } from './view/UiManager';
 
 export default class Canvas extends Component<{}, any> {
   componentDidMount() {
     const dom = document.getElementById('pixi-id');
-    pixiMain(dom);
+    let app = new PIXI.Application({ width: 375, height: 812 });
+    dom.appendChild(app.view);
+    const um = new UiManager(app);
+    um.init();
   }
 
   render() {
