@@ -1,3 +1,4 @@
+// 测试一下github提交
 import React, { Component } from 'react';
 import pixiMain from './canvas/main';
 
